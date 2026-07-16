@@ -1,0 +1,25 @@
+nimTitle	bimap	datastructures/bimap.html	module src/datastructures/bimap		0
+nim	BiMap	datastructures/bimap.html#BiMap	object BiMap		3
+nim	BiMapSeq	datastructures/bimap.html#BiMapSeq	object BiMapSeq		8
+nim	`[]`	datastructures/bimap.html#[],BiMap[T,U],T	proc `[]`[T, U](x: BiMap[T, U]; y: T): U		13
+nim	`[]`	datastructures/bimap.html#[],BiMap[T,U],U	proc `[]`[T, U](x: BiMap[T, U]; y: U): T		18
+nim	`[]=`	datastructures/bimap.html#[]=,BiMap[T,U],T,U	proc `[]=`[T, U](x: var BiMap[T, U]; key: T; val: U)		21
+nim	`[]=`	datastructures/bimap.html#[]=,BiMap[T,U],U,T	proc `[]=`[T, U](x: var BiMap[T, U]; key: U; val: T)		24
+nim	contains	datastructures/bimap.html#contains,BiMap[T,U],	proc contains[T, U](x: BiMap[T, U]; k: T | U): bool		27
+nim	swap	datastructures/bimap.html#swap,BiMap[T,U],T,T	proc swap[T, U](x: var BiMap[T, U]; k1, k2: T)		32
+nim	swap	datastructures/bimap.html#swap,BiMap[T,U],U,U	proc swap[T, U](x: var BiMap[T, U]; v1, v2: U)		35
+nim	`[]`	datastructures/bimap.html#[],BiMapSeq[T,U],T	proc `[]`[T, U](x: BiMapSeq[T, U]; key: T): lent seq[U]		40
+nim	`[]`	datastructures/bimap.html#[],BiMapSeq[T,U],U	proc `[]`[T, U](x: BiMapSeq[T, U]; key: U): lent seq[U]		42
+nim	`[]=`	datastructures/bimap.html#[]=,BiMapSeq[T,U],T,U	proc `[]=`[T, U](x: var BiMapSeq[T, U]; key: T; val: U)		44
+nim	`[]=`	datastructures/bimap.html#[]=,BiMapSeq[T,U],U,T	proc `[]=`[T, U](x: var BiMapSeq[T, U]; val: U; key: T)		50
+nim	contains	datastructures/bimap.html#contains,BiMapSeq[T,U],	proc contains[T, U](x: BiMapSeq[T, U]; key: T | U): bool		52
+nim	find	datastructures/bimap.html#find,BiMapSeq[T,U],U	proc find[T, U](x: BiMapSeq[T, U]; val: U): T		56
+nim	del	datastructures/bimap.html#del,BiMapSeq[T,U],T	proc del[T, U](x: var BiMapSeq[T, U]; key: T)		58
+nim	del	datastructures/bimap.html#del,BiMapSeq[T,U],U	proc del[T, U](x: var BiMapSeq[T, U]; val: U)		64
+nim	rekey	datastructures/bimap.html#rekey,BiMapSeq[T,U],U,T	proc rekey[T, U](x: var BiMapSeq[T, U]; val: U; toKey: T)		78
+nim	pop	datastructures/bimap.html#pop,BiMapSeq[T,U],T	proc pop[T, U](x: var BiMapSeq[T, U]; key: T): U		82
+nimgrp	swap	datastructures/bimap.html#swap-procs-all	proc		32
+nimgrp	del	datastructures/bimap.html#del-procs-all	proc		58
+nimgrp	[]=	datastructures/bimap.html#[]=-procs-all	proc		21
+nimgrp	contains	datastructures/bimap.html#contains-procs-all	proc		27
+nimgrp	[]	datastructures/bimap.html#[]-procs-all	proc		13

@@ -1,0 +1,10 @@
+nimTitle	indexedlist	datastructures/indexedlist.html	module src/datastructures/indexedlist		0
+nim	IndexedList	datastructures/indexedlist.html#IndexedList	object IndexedList		3
+nim	contains	datastructures/indexedlist.html#contains,IndexedList,	proc contains(x: IndexedList; val: IndexedList.L.T): bool		12
+nim	len	datastructures/indexedlist.html#len,IndexedList	proc len(x: IndexedList): int		16
+nim	items	datastructures/indexedlist.html#items.i,IndexedList	iterator items(x: IndexedList): IndexedList.L.T		17
+nim	add	datastructures/indexedlist.html#add,IndexedList,	proc add(x: var IndexedList; val: IndexedList.L.T)		19
+nim	prepend	datastructures/indexedlist.html#prepend,IndexedList,	proc prepend(x: var IndexedList; val: IndexedList.L.T)		24
+nim	del	datastructures/indexedlist.html#del,IndexedList,	proc del(x: var IndexedList; val: IndexedList.L.T)		29
+nim	popFirst	datastructures/indexedlist.html#popFirst,IndexedList	proc popFirst(x: var IndexedList): IndexedList.L.T		33
+nim	popLast	datastructures/indexedlist.html#popLast,IndexedList	proc popLast(x: var IndexedList): IndexedList.L.T		38
