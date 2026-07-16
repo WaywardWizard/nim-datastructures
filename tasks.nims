@@ -7,7 +7,7 @@
 ## - ghPage: Query github page status
 import std/[pegs,strbasics,strformat, json,tables,sequtils]
 
-var 
+var
   docfolder = "docs" # must be this for ghpages
   masterBranch = "main"
 
@@ -39,14 +39,20 @@ task mkdocs, "Generate HTML documentation":
     # ghpages needs an index.html, all doc pages (hardcode) link to theindex.html
     &"cd {docfolder}; ln -s theindex.html index.html"]
   for c in cmds: c.exec
-    
+
   #exec &"mv {docfolder}/{{the,}}index.html" # html still points to theindex.html
 
 task chkcompat, "Test against other nim versions":
   # set requires to the earliest version you want to test back to
   var versions: seq[string]
   var found = false
-  for line in gorgeEx("choosenim --nocolor versions").output.splitLines:
+
+  let chooseNim = gorgeEx("choosenim --nocolor versions").output
+  var captures: array[1,string]
+  assert chooseNim.find(peg"\s*\*\s*{\d+(\.\d+)+}!\d",captures) != -1, "Version detection failed"
+  let thisVersion = captures[0]
+
+  for line in chooseNim.splitLines:
     if line.match(peg"^\s*Installed\:"):
       found = true
       continue
@@ -65,6 +71,7 @@ task chkcompat, "Test against other nim versions":
       echo output
       break
 
+  exec &"choosenim {thisVersion}"
   echo "Best version ", bestVersion
 
 task upghpage, "Setup github pages":
