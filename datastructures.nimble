@@ -7,7 +7,6 @@ license       = "MIT"
 srcDir        = "src"
 installFiles  = @["./tasks.nim","tasks.nims"] # relative to root
 installExt    = @["nim"] # inside src
-installDirs    = @[] # relative to root
 
 
 # Dependencies
