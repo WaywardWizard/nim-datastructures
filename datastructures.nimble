@@ -6,7 +6,8 @@ description   = "Useful datastructures for algorithms. BiMap, BiMapSeq, IndexedL
 license       = "MIT"
 srcDir        = "src"
 installFiles  = @["./tasks.nim","tasks.nims"] # relative to root
-installExt    = @["nim"] # inside src
+installExt    = @["nim", "nims"] # inside src
+# installDirs   = @["./"]
 
 
 # Dependencies
