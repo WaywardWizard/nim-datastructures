@@ -5,7 +5,9 @@ author        = "Ben Tomlin"
 description   = "Useful datastructures for algorithms. BiMap, BiMapSeq, IndexedList"
 license       = "MIT"
 srcDir        = "src"
-installFiles  = @["tasks.nims"]
+installFiles  = @["tasks.nims"] # relative to root
+installExt    = @["nim"] # inside src
+installDir    = @[] # relative to root
 
 
 # Dependencies
