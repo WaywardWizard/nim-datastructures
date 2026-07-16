@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "1.0.0"
 author        = "Ben Tomlin"
 description   = "Useful datastructures for algorithms. BiMap, BiMapSeq, IndexedList"
 license       = "MIT"
