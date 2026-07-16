@@ -9,7 +9,7 @@ import std/[pegs,strbasics,strformat, json,tables,sequtils]
 
 var
   docfolder = "docs" # must be this for ghpages
-  masterBranch = "main"
+  masterBranch = "master"
 
 type Shellcmd = distinct string
 var nimdocShArgs: seq[tuple[argname,value: string, validator:Peg]] = @[
