@@ -13,17 +13,23 @@ proc contains*(x: IndexedList, val: IndexedList.L.T): bool =
   ## Membership check enabling `val in x`
   x.map.contains(val)
 
-proc len*(x: IndexedList):int = x.map.len
+proc len*(x: IndexedList): int =
+  x.map.len
+
 iterator items*(x: IndexedList): IndexedList.L.T =
-  for val in x.list: yield val
+  for val in x.list:
+    yield val
+
 proc add*(x: var IndexedList, val: IndexedList.L.T) = # O(1)
   x.list.add val
-  if val in x.map: raise ValueError.newException "Element data present already"
+  if val in x.map:
+    raise ValueError.newException "Element data present already"
   x.map[val] = x.list.tail
 
 proc prepend*(x: var IndexedList, val: IndexedList.L.T) = # O(1)
   x.list.prepend val
-  if val in x.map: raise ValueError.newException "Element data present already"
+  if val in x.map:
+    raise ValueError.newException "Element data present already"
   x.map[val] = x.list.head
 
 proc del*(x: var IndexedList, val: IndexedList.L.T) = # O(1)
