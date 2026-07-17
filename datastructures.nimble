@@ -5,13 +5,13 @@ description   = "Useful datastructures for algorithms. BiMap, BiMapSeq, IndexedL
 license       = "MIT"
 srcDir        = "src"
 
+let installFileSelectors = [(".",@["tasks.nims","*.md","LICENSE"]),(srcDir,@["*.nim"])]
+
 proc findfiles(dir: string = ".", ipath: openArray[string] = ["*"]): seq[string] =
   for pattern in ipath:
-    result.add gorgeEx("find $# -ipath $#" % [dir, pattern]).output.splitlines()
+    result.add gorgeEx("find $1 -ipath '$1/$2' -printf '%P\n'" % [dir, pattern]).output.splitlines()
 
-let fileSelectors = [("src",["*.nim"]), (".", ["*/task.nims"])]
 
- 
 # relative to root. srcDir, installFiles, installExt, installDirs are limited
 #   - srcDir will set the search directory to this
 #     - install{Files,Dirs,Ext} will then be jailed in srcDir
@@ -21,11 +21,12 @@ let fileSelectors = [("src",["*.nim"]), (".", ["*/task.nims"])]
 #     - install{Ext,Dirs} will now not be granular enough
 #
 # the approach then is to list files explicitly
+#
+# check with nimble dump --json | jq ".installFiles"
 installFiles = @[]
-for (folder,patterns) in fileSelectors:
+for (folder,patterns) in installFileSelectors:
   installFiles.add folder.findfiles(patterns)
-  
-  
+
 include ./tasks.nims
 
  # Dependencies
