@@ -3,8 +3,9 @@ version       = "1.1.0"
 author        = "Ben Tomlin"
 description   = "Useful datastructures for algorithms. BiMap, BiMapSeq, IndexedList"
 license       = "MIT"
-srcDir        = "src"
+# srcDir        = "src"
 
+if srcDir != "": raise ValueError.newException "srcDir setting interferes with file selection"
 let installFileSelectors = [(".",@["tasks.nims","*.md","LICENSE"]),(srcDir,@["*.nim"])]
 
 proc findfiles(dir: string = ".", ipath: openArray[string] = ["*"]): seq[string] =
@@ -26,8 +27,6 @@ proc findfiles(dir: string = ".", ipath: openArray[string] = ["*"]): seq[string]
 installFiles = @[]
 for (folder,patterns) in installFileSelectors:
   installFiles.add folder.findfiles(patterns)
-
-include ./tasks.nims
 
  # Dependencies
 requires "nim >= 1.2.18"
